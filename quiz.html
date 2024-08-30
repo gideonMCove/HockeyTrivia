@@ -99,6 +99,170 @@
     function shuffle (){
         return questions.sort(() => Math.random()-0.5)
     }
+
+    function playNext () {//Every subsequent turn
+    i++
+    goNext = 0
+    setBoard()
+    document.getElementById('trivia').innerText = ''
+    document.getElementById('image').style.backgroundImage = null
+    button0.addEventListener('click', () => {
+        triviaFacts = questions[i].trivia        
+        document.getElementById('trivia').innerText = triviaFacts
+        snakeImage = questions[i].image
+        document.getElementById('image').style.backgroundImage = `url("` + questions[i].image + `")`        
+        imageAlt = questions[i].alt
+        document.getElementById('image').alt = imageAlt
+        goNext +=1
+        if (questions[i].correct != 0){
+            document.getElementById('answer0').style.backgroundColor = '#FF0000'
+            goNext +=2
+            if (questions[i].correct == 1){
+                document.getElementById('answer1').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }else if (questions[i].correct == 2){
+                document.getElementById('answer2').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+            else if (questions[i].correct == 3){
+                document.getElementById('answer3').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+    
+        }else if(questions[i].correct == 0){
+            document.getElementById('answer0').style.backgroundColor = '#00FF00'
+            goNext +=1
+            if (goNext ==2){
+                score++
+                document.getElementById('score').innerText = `Score:${score}`
+            }
+        }
+        
+    })
+    button1.addEventListener('click', () => {
+        triviaFacts = questions[i].trivia
+        document.getElementById('trivia').innerText = triviaFacts
+        snakeImage = questions[i].image
+        document.getElementById('image').style.backgroundImage = `url("` + questions[i].image + `")`
+        imageAlt = questions[i].alt
+        document.getElementById('image').alt = imageAlt
+        goNext+=1
+        if (questions[i].correct != 1){
+            document.getElementById('answer1').style.backgroundColor = '#FF0000'
+            goNext +=2
+            if (questions[i].correct == 0){
+                document.getElementById('answer0').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }else if (questions[i].correct == 2){
+                document.getElementById('answer2').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+            else if (questions[i].correct == 3){
+                document.getElementById('answer3').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+    
+        }else if(questions[i].correct == 1){
+            document.getElementById('answer1').style.backgroundColor = '#00FF00'
+            goNext +=1
+            if (goNext ==2){
+                score++
+                document.getElementById('score').innerText = `Score:${score}`
+            }
+        }
+    })
+    button2.addEventListener('click', () => {
+        triviaFacts = questions[i].trivia
+        document.getElementById('trivia').innerText = triviaFacts
+        snakeImage = questions[i].image
+        document.getElementById('image').style.backgroundImage = `url("` + questions[i].image + `")`
+        imageAlt = questions[i].alt
+        document.getElementById('image').alt = imageAlt
+        goNext+=1
+        if (questions[i].correct != 2){
+            document.getElementById('answer2').style.backgroundColor = '#FF0000'
+            goNext +=2
+            if (questions[i].correct == 1){
+                document.getElementById('answer1').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }else if (questions[i].correct == 0){
+                document.getElementById('answer0').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+            else if (questions[i].correct == 3){
+                document.getElementById('answer3').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+    
+        }else if(questions[i].correct == 2){
+            document.getElementById('answer2').style.backgroundColor = '#00FF00'
+            goNext +=1
+            if (goNext==2){
+                score++
+                document.getElementById('score').innerText = `Score:${score}`
+            }
+        }
+    })
+    button3.addEventListener('click', () => {
+        triviaFacts = questions[i].trivia
+        document.getElementById('trivia').innerText = triviaFacts
+        snakeImage = questions[i].image
+        document.getElementById('image').style.backgroundImage = `url("` + questions[i].image + `")`
+        imageAlt = questions[i].alt
+        document.getElementById('image').alt = imageAlt
+        goNext+=1
+        if (questions[i].correct != 3){
+            document.getElementById('answer3').style.backgroundColor = '#FF0000'
+            goNext +=2
+            if (questions[i].correct == 1){
+                document.getElementById('answer1').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }else if (questions[i].correct == 2){
+                document.getElementById('answer2').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+            else if (questions[i].correct == 0){
+                document.getElementById('answer0').style.backgroundColor ='#00FF00'
+                goNext +=2
+            }
+    
+        }else if(questions[i].correct == 3){
+            document.getElementById('answer3').style.backgroundColor = '#00FF00'
+            goNext +=1
+            if (goNext==2){
+                score++
+                document.getElementById('score').innerText = `Score:${score}`
+            }
+        }
+    })
+    buttonReset.addEventListener('click', () => {
+        location.reload()
+    })
+    if(i == (questions.length - 1)){
+        trivaQuestion = ''
+        document.getElementById('triviaQuestions').innerText = trivaQuestion
+        answer0 = ''
+        document.getElementById('answer0').innerText = answer0
+        answer1 = ''
+        document.getElementById('answer1').innerText = answer1
+        answer2 = ''
+        document.getElementById('answer2').innerText = answer2
+        answer3 = ''
+        document.getElementById('answer3').innerText = answer3
+        document.getElementById('answer0').style.backgroundColor = null
+        document.getElementById('answer1').style.backgroundColor = null
+        document.getElementById('answer2').style.backgroundColor = null
+        document.getElementById('answer3').style.backgroundColor = null
+        document.getElementById('score').innerText = `Game Over! You scored ${score}/${questions.length - 1}`       
+        
+    }
+
+}
+
+buttonReset.addEventListener('click', () => {
+    location.reload()
+})
+
   </script>
   <head>
     <meta charset="UTF-8" />

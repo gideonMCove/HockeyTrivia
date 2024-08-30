@@ -84,6 +84,20 @@
         triviaFacts = ''
         document.getElementById('trivia').innerText = triviaFacts
 
+        trivaQuestion = questions[i].question
+        document.getElementById('triviaQuestions').innerText = trivaQuestion
+        answer0 = questions[i].answers[0]
+        document.getElementById('answer0').innerText = answer0
+        answer1 = questions[i].answers[1]
+        document.getElementById('answer1').innerText = answer1
+        answer2 = questions[i].answers[2]
+        document.getElementById('answer2').innerText = answer2
+        answer3 = questions[i].answers[3]
+        document.getElementById('answer3').innerText = answer3      
+    }
+//  ~~~This function shuffles the questions so that players have to learn the trivia instead of just memorizes the order of answers ~~~
+    function shuffle (){
+        return questions.sort(() => Math.random()-0.5)
     }
   </script>
   <head>

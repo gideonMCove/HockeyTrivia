@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <script>
+    let questions = [
+      {
+        question:
+          "Which of these players has scored the most points in NHL history?",
+        answers: [
+          "Mario Lemiuex",
+          "Wayne Gretzky",
+          "Gordie Howe",
+          "Sidney Crosby",
+        ],
+        correct: 1,
+        trivia:
+          "Wayne Gretzky, also known as the great one, has scored 2857 points, 936 more points than second place, Jaromir Jagr ",
+      },
+      {
+        question:
+          "Which of these teams has won the most Stanley Cups in a row?",
+        answers: [
+          "Montr&#201al Canadiens",
+          "New York Islanders",
+          "Pittsburgh Penguins",
+          "Toronto Maple Leafs",
+        ],
+        correct: 0,
+        trivia:
+          "Montr&#201al Canadiens won 5 cups in a row from 1955-56 to 1959-60. The Canadiens have also won the most cups in NHL history at 24",
+      },
+      {
+        question: "Which Swedish NHLer has the most career points and goals?",
+        answers: [
+          "Peter Forsberg",
+          "Daniel Alfredsson",
+          "Henrik Lundqvist",
+          "Mats Sundin",
+        ],
+        correct: 3,
+        trivia:
+          "Mats Sundin has the most goals and points for all swedish born hockey players. He spent his career with the Quebec Nordiques, Toronto Maple Leafs, and Vancouver Canucks tallying 564 goals and 1,349 points",
+      },
+      {
+        question: "Which NHLer has the most career penalty minutes?",
+        answers: ["Dave 'Tiger' Williams", "Tie Domi", "Craig Berube", "Chris Chelios"],
+        correct: 0,
+        trivia: "Dave 'Tiger' Williams has the most career penalty minutes at 3,971. Thats almost 3 full days spend in the sin bin!"
+      },
+      {
+        question: "Which Goalies has the most career wins?",
+        answers: ["Roberto Luongo", "Patrick Roy", "Martin Brodeur", "Eddy Belfour"],
+        correct: 2,
+        trivia: "Martin Brodeur won 691 games! If a goalie had a 20 year career, they would have to win on average 35 games a season to beat his record"
+      }
+    ];
+    //  ~~~Variables~~~
+
+    let button0 = document.querySelector('#answer0')
+    let button1 = document.querySelector('#answer1')
+    let button2 = document.querySelector('#answer2')
+    let button3 = document.querySelector('#answer3')
+
+    let buttonReset = document.querySelector('#reset')
+    let buttonNext = document.querySelector('#next')
+    let buttonBack = document.querySelector('#back')
+
+    let score = 0
+
+    // ~~~Functions~~~
+
+    // This function sets the board to blank values, allowing players to start over from scratch
+
+    function setBoard(){
+        triviaQuestion = ''
+        document.getElementById('triviaQuestions').innerText = triviaQuestion
+        answer0 = ''
+        document.getElementById('answer0').innerText = answer0
+        answer1 = ''
+        document.getElementById('answer1').innerText = answer1
+        answer2 = ''
+        document.getElementById('answer2').innerText = answer2
+        answer3 = ''        
+        document.getElementById('answer3').innerText = answer3  
+        triviaFacts = ''
+        document.getElementById('trivia').innerText = triviaFacts
+
+    }
+  </script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gideon's Hockey Trivia!</title>
+  </head>
+  <body></body>
+</html>
